@@ -8,16 +8,6 @@ public class Main {
     public static void main(String[] args) {
 
         crearEstudiante();
-        //calcularPromedioCurso();
-        //calcularPromedioEdad();
-        //calcularPromedioNota1();
-        //calcularNotaMayorDelCurso();
-        //calcularNotaMenorCurso();
-        //aprobacionCurso();
-        //calcularPorcentajeGanaronCurso();
-        //calcularPorcentajePerdieronCurso();
-        //obtenerEstudianteNotasMayor4();
-        //notaMaxima();
     }
 
     //Método para Creación de Estudiantes e instancias
@@ -51,10 +41,19 @@ public class Main {
         estudiante3.setNota3(4.5);
 
         calcularDefinitivaEstudiante(estudiante1, estudiante2, estudiante3);
-
+        //calcularPromedioCurso(estudiante1, estudiante2, estudiante3);
+        calcularPromedioEdad(estudiante1, estudiante2, estudiante3);
+        calcularPromedioNota1(estudiante1, estudiante2, estudiante3);
+        calcularNotaMayorDelCurso(estudiante1, estudiante2, estudiante3);
+        //calcularNotaMenorCurso(estudiante1, estudiante2, estudiante3);
+        //aprobacionCurso(estudiante1, estudiante2, estudiante3);
+        //calcularPorcentajeGanaronCurso(estudiante1, estudiante2, estudiante3);
+        //calcularPorcentajePerdieronCurso(estudiante1, estudiante2, estudiante3);
+        //obtenerEstudianteNotasMayor4(estudiante1, estudiante2, estudiante3);
+        //notaMaxima(estudiante1, estudiante2, estudiante3);
     }
 
-    //Método para calcular la nota definitiva de un estudiante
+    //Método para cálcular la nota definitiva de un estudiante
     private static void calcularDefinitivaEstudiante(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3){
 
         double definitiva1 = 0;
@@ -70,4 +69,45 @@ public class Main {
         System.out.println("La Nota definitiva del estudiante " + estudiante3.getNombre() + " es : " + definitiva3);
     }
 
+    //Método para cálcular el promedio del curso
+    //private static void calcularPromedioCurso(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3){
+
+        //double promCurso = 0;
+
+        //promCurso = ;
+
+        //System.out.println(promCurso);
+    //}
+
+    //Método para cálcular el promedio de edad de los estudiantes
+    private static void calcularPromedioEdad(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
+
+        double promEdad = 0;
+
+        promEdad = (Double.valueOf(estudiante1.getEdad()) + Double.valueOf(estudiante2.getEdad()) + Double.valueOf(estudiante3.getEdad())) / 3;
+
+        System.out.println("El Promedio de edad de los estudiantes es de : " + promEdad);
+    }
+
+    //Método para cálcular el promedio de la nota 1 de los estudiantes
+    private static void calcularPromedioNota1(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
+
+        double promNota1 = 0;
+
+        promNota1 = (estudiante1.getNota1() + estudiante2.getNota1() + estudiante3.getNota1()) / 3;
+
+        System.out.println("El Promedio de la nota 1 de los estudiantes en el curso es: " + promNota1);
+    }
+
+    //Método para cálcular la nota mayor del curso
+    private static void calcularNotaMayorDelCurso(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
+
+        double notaMayor = 0;
+
+        if (estudiante1.getNota1()>estudiante1.getNota2){
+
+        }
+
+        System.out.println("El Promedio de la nota 1 de los estudiantes en el curso es: " + promNota1);
+    }
 }

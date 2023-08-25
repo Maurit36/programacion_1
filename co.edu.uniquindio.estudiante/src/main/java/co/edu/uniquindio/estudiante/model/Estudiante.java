@@ -68,5 +68,4 @@ public class Estudiante {
     public void setNota3(double nota3) {
         this.nota3 = nota3;
     }
-
 }
