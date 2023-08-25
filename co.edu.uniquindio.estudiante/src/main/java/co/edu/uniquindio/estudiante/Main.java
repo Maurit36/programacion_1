@@ -49,16 +49,15 @@ public class Main {
         calcularPromedioCurso(estudiante1, estudiante2, estudiante3);
         calcularPromedioEdad(estudiante1, estudiante2, estudiante3);
         calcularPromedioNota1(estudiante1, estudiante2, estudiante3);
-        calcularNotaMayorEst1(estudiante1);
-        calcularNotaMayorEst2(estudiante2);
-        calcularNotaMayorEst3(estudiante3);
-        //calcularNotaMayorDelCurso(estudiante1, estudiante2, estudiante3);
-        //calcularNotaMenorCurso(estudiante1, estudiante2, estudiante3);
+        calcularNotaMayorDelCurso(estudiante1, estudiante2, estudiante3);
+        calcularNotaMenorCurso(estudiante1, estudiante2, estudiante3);
         //aprobacionCurso(estudiante1, estudiante2, estudiante3);
         //calcularPorcentajeGanaronCurso(estudiante1, estudiante2, estudiante3);
         //calcularPorcentajePerdieronCurso(estudiante1, estudiante2, estudiante3);
         //obtenerEstudianteNotasMayor4(estudiante1, estudiante2, estudiante3);
-        //notaMaxima(estudiante1, estudiante2, estudiante3);
+        calcularNotaMaximaEst1(estudiante1);
+        calcularNotaMaximaEst2(estudiante2);
+        calcularNotaMaximaEst3(estudiante3);
     }
 
     //Método para cálcular el promedio de notas del estudiante 1
@@ -143,76 +142,98 @@ public class Main {
         System.out.println("El Promedio de la nota 1 de los estudiantes en el curso es: " + promNota1);
     }
 
-    //Método para calcular la nota mayor del estudiante 1
-    private static double calcularNotaMayorEst1(Estudiante estudiante1) {
 
-        double notaMayorEst1 = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Método para calcular la nota máxima del estudiante 1
+    private static double calcularNotaMaximaEst1(Estudiante estudiante1) {
+
+        double notaMaximaEst1 = 0;
 
         if (estudiante1.getNota1() > estudiante1.getNota2()) {
             if (estudiante1.getNota1() > estudiante1.getNota3()) {
-                notaMayorEst1 = estudiante1.getNota1();
-                System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst1);
+                notaMaximaEst1 = estudiante1.getNota1();
+                System.out.println(" La nota máxima del estudiante 1 es : " + notaMaximaEst1);
             } else {
-                notaMayorEst1 = estudiante1.getNota3();
-                System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst1);
+                notaMaximaEst1 = estudiante1.getNota3();
+                System.out.println(" La nota máxima del estudiante 1 es : " + notaMaximaEst1);
             }
         } else if (estudiante1.getNota2() > estudiante1.getNota3()) {
-            notaMayorEst1 = estudiante1.getNota2();
-            System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst1);
+            notaMaximaEst1 = estudiante1.getNota2();
+            System.out.println(" La nota máxima del estudiante 1 es : " + notaMaximaEst1);
         } else {
-            notaMayorEst1 = estudiante1.getNota3();
-            System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst1);
+            notaMaximaEst1 = estudiante1.getNota3();
+            System.out.println(" La nota máxima del estudiante 1 es : " + notaMaximaEst1);
         }
-        return notaMayorEst1;
+        return notaMaximaEst1;
     }
 
-    //Método para calcular la nota mayor del estudiante 2
-    private static double calcularNotaMayorEst2(Estudiante estudiante2) {
+    //Método para calcular la nota máxima del estudiante 2
+    private static double calcularNotaMaximaEst2(Estudiante estudiante2) {
 
-        double notaMayorEst2 = 0;
+        double notaMaximaEst2 = 0;
 
         if (estudiante2.getNota1() > estudiante2.getNota2()) {
             if (estudiante2.getNota1() > estudiante2.getNota3()) {
-                notaMayorEst2 = estudiante2.getNota1();
-                System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst2);
+                notaMaximaEst2 = estudiante2.getNota1();
+                System.out.println(" La nota máxima del estudiante 2 es : " + notaMaximaEst2);
             } else {
-                notaMayorEst2 = estudiante2.getNota3();
-                System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst2);
+                notaMaximaEst2 = estudiante2.getNota3();
+                System.out.println(" La nota máxima del estudiante 2 es : " + notaMaximaEst2);
             }
         } else if (estudiante2.getNota2() > estudiante2.getNota3()) {
-            notaMayorEst2 = estudiante2.getNota2();
-            System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst2);
+            notaMaximaEst2 = estudiante2.getNota2();
+            System.out.println(" La nota máxima del estudiante 2 es : " + notaMaximaEst2);
         } else {
-            notaMayorEst2 = estudiante2.getNota3();
-            System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst2);
+            notaMaximaEst2 = estudiante2.getNota3();
+            System.out.println(" La nota máxima del estudiante 2 es : " + notaMaximaEst2);
         }
-        return notaMayorEst2;
+        return notaMaximaEst2;
     }
 
-    //Método para calcular la nota mayor del estudiante 3
-    private static double calcularNotaMayorEst3(Estudiante estudiante3) {
+    //Método para calcular la nota máxima del estudiante 3
+    private static double calcularNotaMaximaEst3(Estudiante estudiante3) {
 
-        double notaMayorEst3 = 0;
+        double notaMaximaEst3 = 0;
 
         if (estudiante3.getNota1() > estudiante3.getNota2()) {
             if (estudiante3.getNota1() > estudiante3.getNota3()) {
-                notaMayorEst3 = estudiante3.getNota1();
-                System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst3);
+                notaMaximaEst3 = estudiante3.getNota1();
+                System.out.println(" La nota máxima del estudiante 3 es : " + notaMaximaEst3);
             } else {
-                notaMayorEst3 = estudiante3.getNota3();
-                System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst3);
+                notaMaximaEst3 = estudiante3.getNota3();
+                System.out.println(" La nota máxima del estudiante 3 es : " + notaMaximaEst3);
             }
         } else if (estudiante3.getNota2() > estudiante3.getNota3()) {
-            notaMayorEst3 = estudiante3.getNota2();
-            System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst3);
+            notaMaximaEst3 = estudiante3.getNota2();
+            System.out.println(" La nota máxima del estudiante 3 es : " + notaMaximaEst3);
         } else {
-            notaMayorEst3= estudiante3.getNota3();
-            System.out.println(" La nota mayor del estudiante 1 es : " + notaMayorEst3);
+            notaMaximaEst3= estudiante3.getNota3();
+            System.out.println(" La nota máxima del estudiante 3 es : " + notaMaximaEst3);
         }
-        return notaMayorEst3;
+        return notaMaximaEst3;
     }
-
-
-
-
 }
