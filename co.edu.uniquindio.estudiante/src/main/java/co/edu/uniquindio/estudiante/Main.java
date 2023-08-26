@@ -58,9 +58,9 @@ public class Main {
         defEstudiante1(estudiante1);
         defEstudiante2(estudiante2);
         defEstudiante3(estudiante3);
-
-
-
+        calcularNotaMaxEst1(estudiante1);
+        calcularNotaMaxEst2(estudiante2);
+        calcularNotaMaxEst3(estudiante3);
         calcularNotaMinimaEst1(estudiante1);
         calcularNotaMinimaEst2(estudiante2);
         calcularNotaMinimaEst3(estudiante3);
@@ -230,12 +230,6 @@ public class Main {
         defEstudiante3 = (estudiante3.getNota1() + estudiante3.getNota2() + estudiante3.getNota3()) / 3;
         return defEstudiante3;
     }
-
-
-
-
-
-
 
     //Método para calcular la nota máxima del estudiante 1
     private static double calcularNotaMaxEst1(Estudiante estudiante1) {
