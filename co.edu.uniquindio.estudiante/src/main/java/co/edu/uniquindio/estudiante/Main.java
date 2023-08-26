@@ -1,7 +1,5 @@
 package co.edu.uniquindio.estudiante;
 
-import java.util.Scanner;
-
 //Importación clase Estudiante
 import co.edu.uniquindio.estudiante.model.Estudiante;
 
