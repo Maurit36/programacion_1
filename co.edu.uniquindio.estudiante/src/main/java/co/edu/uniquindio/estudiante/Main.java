@@ -5,6 +5,11 @@ import co.edu.uniquindio.estudiante.model.Estudiante;
 
 //Creación clase Main
 public class Main {
+
+    public static int ganaronCurso = 0;
+    public static int perdieronCurso = 0;
+    public static int CantidadEstudiantesNotaMayor4 = 0;
+
     public static void main(String[] args) {
 
         //Declaración primer método (no tiene parámetros)
@@ -42,16 +47,42 @@ public class Main {
         estudiante3.setNota3(4.5);
 
         //Declaración de métodos con sus respectivos parámetros
-        //calcularDefinitivaEstudiante(estudiante1, estudiante2, estudiante3);
+        double definitivaEstudiante1 = calcularDefinitivaEstudiante(estudiante1.getNota1(), estudiante1.getNota2(),
+                estudiante1.getNota3());
+
+        double definitivaEstudiante2 = calcularDefinitivaEstudiante(estudiante2.getNota1(), estudiante2.getNota2(),
+                estudiante2.getNota3());
+
+        double definitivaEstudiante3 = calcularDefinitivaEstudiante(estudiante3.getNota1(), estudiante3.getNota2(),
+                estudiante3.getNota3());
+
+        System.out.println("La nota definitiva del estudiante " + estudiante1.getNombre() +
+                " es: " + definitivaEstudiante1);
+        System.out.println("La nota definitiva del estudiante " + estudiante2.getNombre() +
+                " es: " + definitivaEstudiante2);
+        System.out.println("La nota definitiva del estudiante " + estudiante3.getNombre() +
+                " es: " + definitivaEstudiante3);
+
         calcularPromedioCurso(estudiante1, estudiante2, estudiante3);
         calcularPromedioEdad(estudiante1, estudiante2, estudiante3);
         calcularPromedioNota1(estudiante1, estudiante2, estudiante3);
         calcularNotaMayorDelCurso(estudiante1, estudiante2, estudiante3);
         calcularNotaMenorCurso(estudiante1, estudiante2, estudiante3);
-        //aprobacionCurso(estudiante1, estudiante2, estudiante3);
-        //calcularPorcentajeGanaronCurso(estudiante1, estudiante2, estudiante3);
-        //calcularPorcentajePerdieronCurso(estudiante1, estudiante2, estudiante3);
-        //obtenerEstudianteNotasMayor4(estudiante1, estudiante2, estudiante3);
+
+        System.out.println(aprobacionCurso(definitivaEstudiante1, estudiante1.getNombre()));
+        System.out.println(aprobacionCurso(definitivaEstudiante2, estudiante2.getNombre()));
+        System.out.println(aprobacionCurso(definitivaEstudiante3, estudiante3.getNombre()));
+
+        calcularPorcentajeGanaronCurso(ganaronCurso);
+        calcularPorcentajePerdieronCurso(perdieronCurso);
+        obtenerEstudianteNotaMayor4(estudiante1.getNombre(), estudiante1.getNota1(), estudiante1.getNota2(),
+                estudiante1.getNota3());
+        obtenerEstudianteNotaMayor4(estudiante2.getNombre(), estudiante2.getNota1(), estudiante2.getNota2(),
+                estudiante2.getNota3());
+        obtenerEstudianteNotaMayor4(estudiante3.getNombre(), estudiante3.getNota1(), estudiante3.getNota2(),
+                estudiante3.getNota3());
+        cantidadEstudiantesNotasMayor4();
+
         calcularNotaMaximaEst1(estudiante1);
         calcularNotaMaximaEst2(estudiante2);
         calcularNotaMaximaEst3(estudiante3);
@@ -66,44 +97,21 @@ public class Main {
         calcularNotaMinimaEst3(estudiante3);
     }
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //Método para calcular la nota definitiva de un estudiante
-    //private static void calcularDefinitivaEstudiante(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3){
+    //Método para calcular la nota definitiva del estudiante
+    public static double calcularDefinitivaEstudiante(double nota1, double nota2, double nota3){
 
-    //Scanner scanner = new Scanner(System.in);
-    //System.out.print("Digite el nombre del estudiante: ");
-
-    //String nomEstudiante = String.valueOf(scanner.nextInt());
-
-    //double definitiva = 0;
-
-    //definitiva =
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //double definitiva1 = 0;
-        //double definitiva2 = 0;
-        //double definitiva3 = 0;
-
-        //definitiva1 = (estudiante1.getNota1() + estudiante1.getNota2() + estudiante1.getNota3()) / 3;
-        //definitiva2 = (estudiante2.getNota1() + estudiante2.getNota2() + estudiante2.getNota3()) / 3;
-        //definitiva3 = (estudiante3.getNota1() + estudiante3.getNota2() + estudiante3.getNota3()) / 3;
-
-        //System.out.println("La Nota definitiva del estudiante " + estudiante1.getNombre() + " es : " + definitiva1);
-        //System.out.println("La Nota definitiva del estudiante " + estudiante2.getNombre() + " es : " + definitiva2);
-        //System.out.println("La Nota definitiva del estudiante " + estudiante3.getNombre() + " es : " + definitiva3);
-    //}
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        double notaDefinitiva = (nota1 + nota2 + nota3) / 3;
+        return notaDefinitiva;
+    }
 
     //Método para calcular el promedio del curso
     private static void calcularPromedioCurso(Estudiante estudiante1, Estudiante estudiante2,
                                               Estudiante estudiante3){
 
         double promCurso = 0;
-
         promCurso = (defEstudiante1(estudiante1) + defEstudiante2(estudiante2) + defEstudiante3(estudiante3)) / 3;
 
-        System.out.println("El promedio del curso es : " + promCurso);
+        System.out.println("El promedio del curso es: " + promCurso);
     }
 
     //Método para calcular el promedio de edad de los estudiantes
@@ -111,11 +119,10 @@ public class Main {
                                              Estudiante estudiante3) {
 
         double promEdad = 0;
-
         promEdad = (Double.valueOf(estudiante1.getEdad()) + Double.valueOf(estudiante2.getEdad())
                 + Double.valueOf(estudiante3.getEdad())) / 3;
 
-        System.out.println("El Promedio de edad de los estudiantes es de : " + promEdad);
+        System.out.println("El Promedio de edad de los estudiantes es: " + promEdad);
     }
 
     //Método para calcular el promedio de la nota 1 de los estudiantes
@@ -123,7 +130,6 @@ public class Main {
                                               Estudiante estudiante3) {
 
         double promNota1 = 0;
-
         promNota1 = (estudiante1.getNota1() + estudiante2.getNota1() + estudiante3.getNota1()) / 3;
 
         System.out.println("El Promedio de la nota 1 de los estudiantes en el curso es: " + promNota1);
@@ -144,7 +150,8 @@ public class Main {
         if(notaMaxEst3 > notaMayorCurso){
             notaMayorCurso = notaMaxEst3;
         }
-        System.out.println("La nota mayor del curso es : " + notaMayorCurso);
+
+        System.out.println("La nota mayor del curso es: " + notaMayorCurso);
     }
 
     //Método para calcular la nota menor del curso
@@ -162,49 +169,103 @@ public class Main {
         if(notaMinimaEst3 < notaMenorCurso){
             notaMenorCurso = notaMinimaEst3;
         }
-        System.out.println("La nota menor del curso es : " + notaMenorCurso);
+
+        System.out.println("La nota menor del curso es: " + notaMenorCurso);
+    }
+
+    //Método para calcular los estudiantes que aprobaron el curso
+    public static String aprobacionCurso(double defEstudiante, String nombreEstudiante){
+
+        if (defEstudiante >= 3.0){
+            ganaronCurso += 1;
+            return "El estudiante " + nombreEstudiante + " aprobó el curso";
+        }else {
+            perdieronCurso +=1;
+            return "El estudiante " + nombreEstudiante + " no aprobó el curso";
+        }
+    }
+
+    //Método para calcular el porcentaje de los estudiantes que ganaron el curso
+    public static double calcularPorcentajeGanaronCurso(int ganaronCurso){
+
+        double porcentajeGanaronCurso = (ganaronCurso * 100) / 3;
+
+        System.out.println("El porcentaje de estudiantes que ganaron el curso es: " +
+                porcentajeGanaronCurso + "%");
+        return porcentajeGanaronCurso;
+    }
+
+    //Método para calcular el porcentaje de los estudiantes que perdieron el curso
+    public static double calcularPorcentajePerdieronCurso(int perdieronCurso){
+
+        double porcentajeperdieronCurso = (perdieronCurso * 100) / 3;
+
+        System.out.println("El porcentaje de estudiantes que perdieron el curso es: " +
+                porcentajeperdieronCurso + "%");
+        return porcentajeperdieronCurso;
+    }
+
+    //Método para obtener el nombre del estudiante con notas mayores o iguales a 4.0
+    public static String obtenerEstudianteNotaMayor4(String nombre, double nota1,double nota2, double nota3){
+
+        if (nota1 >= 4 && nota2 >= 4 && nota3 >= 4){
+            CantidadEstudiantesNotaMayor4 += 1;
+
+            System.out.println("El estudiante " + nombre + " tiene todas las notas mayores o iguales a: 4.0");
+            return "El estudiante " + nombre + " tiene todas las notas mayores o iguales a: 4.0";
+        }
+        return null;
+    }
+
+    //Método para calcular cuando ningún estudiante tiene notas mayores o iguales a 4.0
+    public static String cantidadEstudiantesNotasMayor4(){
+
+        if (CantidadEstudiantesNotaMayor4 == 0){
+
+            System.out.println("No se encontró estudiante con notas mayores o iguales a: 4.0");
+            return "No se encontró estudiante con notas mayores o iguales a: 4.0";
+        }
+        System.out.println("hay " + CantidadEstudiantesNotaMayor4 + " con notas mayores o iguales a: 4.0");
+        return "hay " + CantidadEstudiantesNotaMayor4 + " con notas mayores o iguales a: 4.0";
     }
 
     //Método para calcular la nota máxima del estudiante 1
     private static void calcularNotaMaximaEst1(Estudiante estudiante1) {
 
         double notaMaximaEst1 = estudiante1.getNota1();
-
         if (estudiante1.getNota2() > notaMaximaEst1) {
             notaMaximaEst1 = estudiante1.getNota2();
         }
         if(estudiante1.getNota3() > notaMaximaEst1) {
             notaMaximaEst1 = estudiante1.getNota3();
         }
-        System.out.println(" La nota máxima del estudiante 1 es : " + notaMaximaEst1);
+        System.out.println(" La nota máxima del estudiante 1 es: " + notaMaximaEst1);
     }
 
     //Método para calcular la nota máxima del estudiante 2
     private static void calcularNotaMaximaEst2(Estudiante estudiante2) {
 
         double notaMaximaEst2 = estudiante2.getNota1();
-
         if (estudiante2.getNota2() > notaMaximaEst2) {
             notaMaximaEst2 = estudiante2.getNota2();
         }
         if(estudiante2.getNota3() > notaMaximaEst2) {
             notaMaximaEst2 = estudiante2.getNota3();
         }
-        System.out.println(" La nota máxima del estudiante 2 es : " + notaMaximaEst2);
+        System.out.println(" La nota máxima del estudiante 2 es: " + notaMaximaEst2);
     }
 
     //Método para calcular la nota máxima del estudiante 3
     private static void calcularNotaMaximaEst3(Estudiante estudiante3) {
 
         double notaMaximaEst3 = estudiante3.getNota1();
-
         if (estudiante3.getNota2() > notaMaximaEst3) {
             notaMaximaEst3 = estudiante3.getNota2();
         }
         if (estudiante3.getNota3() > notaMaximaEst3) {
             notaMaximaEst3 = estudiante3.getNota3();
         }
-        System.out.println(" La nota máxima del estudiante 3 es : " + notaMaximaEst3);
+        System.out.println(" La nota máxima del estudiante 3 es: " + notaMaximaEst3);
     }
 
     //Método para calcular el promedio de notas del estudiante 1
@@ -235,7 +296,6 @@ public class Main {
     private static double calcularNotaMaxEst1(Estudiante estudiante1) {
 
         double notaMaxEst1 = estudiante1.getNota1();
-
         if (estudiante1.getNota2() > notaMaxEst1) {
             notaMaxEst1 = estudiante1.getNota2();
         }
@@ -249,7 +309,6 @@ public class Main {
     private static double calcularNotaMaxEst2(Estudiante estudiante2) {
 
         double notaMaxEst2 = estudiante2.getNota1();
-
         if (estudiante2.getNota2() > notaMaxEst2) {
             notaMaxEst2 = estudiante2.getNota2();
         }
@@ -263,7 +322,6 @@ public class Main {
     private static double calcularNotaMaxEst3(Estudiante estudiante3) {
 
         double notaMaxEst3 = estudiante3.getNota1();
-
         if (estudiante3.getNota2() > notaMaxEst3) {
             notaMaxEst3 = estudiante3.getNota2();
         }
@@ -277,7 +335,6 @@ public class Main {
     private static double calcularNotaMinimaEst1(Estudiante estudiante1) {
 
         double notaMinimaEst1 = estudiante1.getNota1();
-
         if (estudiante1.getNota2() < notaMinimaEst1) {
             notaMinimaEst1 = estudiante1.getNota2();
         }
@@ -291,7 +348,6 @@ public class Main {
     private static double calcularNotaMinimaEst2(Estudiante estudiante2) {
 
         double notaMinimaEst2 = estudiante2.getNota1();
-
         if (estudiante2.getNota2() < notaMinimaEst2) {
             notaMinimaEst2 = estudiante2.getNota2();
         }
@@ -305,7 +361,6 @@ public class Main {
     private static double calcularNotaMinimaEst3(Estudiante estudiante3) {
 
         double notaMinimaEst3 = estudiante3.getNota1();
-
         if (estudiante3.getNota2() < notaMinimaEst3) {
             notaMinimaEst3 = estudiante3.getNota2();
         }
