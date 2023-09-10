@@ -205,7 +205,7 @@ public class Main {
         return porcentajeperdieronCurso;
     }
 
-    //Método para obtener el nombre del estudiante con notas mayores o iguales a 4.0
+    //Método para obtener el nombre del estudiante con todas las notas mayores o iguales a 4.0
     public static String obtenerEstudianteNotaMayor4(String nombre, double nota1,double nota2, double nota3){
 
         if (nota1 >= 4 && nota2 >= 4 && nota3 >= 4){
@@ -222,11 +222,11 @@ public class Main {
 
         if (CantidadEstudiantesNotaMayor4 == 0){
 
-            System.out.println("No se encontró estudiante con notas mayores o iguales a: 4.0");
-            return "No se encontró estudiante con notas mayores o iguales a: 4.0";
+            System.out.println("No se encontró estudiante con todas las notas mayores o iguales a: 4.0");
+            return "No se encontró estudiante con todas las notas mayores o iguales a: 4.0";
         }
-        System.out.println("hay " + CantidadEstudiantesNotaMayor4 + " con notas mayores o iguales a: 4.0");
-        return "hay " + CantidadEstudiantesNotaMayor4 + " con notas mayores o iguales a: 4.0";
+        System.out.println("hay " + CantidadEstudiantesNotaMayor4 + " con todas las notas mayores o iguales a: 4.0");
+        return "hay " + CantidadEstudiantesNotaMayor4 + " con todas las notas mayores o iguales a: 4.0";
     }
 
     //Método para calcular la nota máxima del estudiante 1
